@@ -2,10 +2,8 @@ from notaciones import *
 cad = "\tEscoge de que notación quieres partir:\n"     
 cad += "1.- Infija - Infix\n"
 cad += "2.- Postfija - Postfix - Polaca Inversa\n"
-cad += "3.- Prefija - Prefix - Polaca\n"
 
 cad2 = "Ingresa la notación que convertiremos:\n> "
-
 
 strFromTo = lambda num,origin,to: str(num)+".- Transformar de "+origin+" a "+to
 
@@ -46,23 +44,6 @@ while True:
             else: 
                 print("¡Esa opcion no existe, verifica bien!")
             a = int(input("\n¿Quieres realizar otra operación desde Infijo?\n1.- Si\nOtro numero.- No\n> "))
-            resp = True if a == 1 else False
-    
-    elif typeNotation == 3:
-        notationIn = input("\n"+cad2)
-        prefija = notationConversion(notationIn)
-        while resp:
-            print("\n\t¿Que quieres hacer?")
-            print(strFromTo(1,"Prefija","Postfija"))
-            print(strFromTo(2,"Prefija","Infija"))
-            opc = int(input("> "))
-            if opc == 1:
-                print("\n\tNotacion Postfija"+" ".join(prefija.prefixToPostfix()))
-            elif opc == 2: 
-                print("\n\tNotacion Infija"+" ".join(prefija.prefixToInfix()))
-            else: 
-                print("¡Esa opcion no existe, verifica bien!")
-            a = int(input("\n\t¿Quieres realizar otra operación desde Infijo?\n1.- Si\nOtro numero.- No\n> "))
             resp = True if a == 1 else False
     else:
         print("\n\t¡No existe esa opción!")
